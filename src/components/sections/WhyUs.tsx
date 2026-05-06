@@ -1,20 +1,4 @@
-const items = [
-  {
-    icon: "⭐",
-    title: "Calificación 5 estrellas",
-    desc: "Nuestros pacientes nos recomiendan por la calidad y la calidez de nuestro servicio.",
-  },
-  {
-    icon: "🏳️‍🌈",
-    title: "Ambiente inclusivo",
-    desc: "Espacio amigable y respetuoso para toda la comunidad. Aquí todos sonríen.",
-  },
-  {
-    icon: "📍",
-    title: "Ubicados en Barranquilla",
-    desc: "Fácil acceso en el barrio Metropolitana. Te esperamos con una sonrisa.",
-  },
-];
+import { siteConfig } from "@/config/site";
 
 export function WhyUs() {
   return (
@@ -23,14 +7,14 @@ export function WhyUs() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto reveal">
           <span className="text-primary font-bold uppercase tracking-widest text-sm">
-            ¿Por qué elegirnos?
+            {siteConfig.whyUs.tagline}
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-extrabold">
-            Más que una clínica, una familia
+            {siteConfig.whyUs.title}
           </h2>
         </div>
         <div className="mt-14 grid md:grid-cols-3 gap-6">
-          {items.map((it, i) => (
+          {siteConfig.whyUs.items.map((it, i) => (
             <div
               key={it.title}
               className="reveal bg-white rounded-3xl p-8 text-center shadow-card"

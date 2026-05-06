@@ -1,5 +1,5 @@
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
-import { ADDRESS, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
+import { siteConfig } from "@/config/site";
 
 const mapSrc =
   "https://www.google.com/maps?q=Cra.+9f+%2345b-45,+Metropolitana,+Barranquilla&output=embed";
@@ -10,41 +10,41 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto reveal">
           <span className="text-primary font-bold uppercase tracking-widest text-sm">
-            Contacto
+            {siteConfig.contact.tagline}
           </span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-extrabold">Visítanos o escríbenos</h2>
+          <h2 className="mt-3 text-4xl md:text-5xl font-extrabold">{siteConfig.contact.title}</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Estamos listos para atenderte y resolver todas tus dudas.
+            {siteConfig.contact.description}
           </p>
         </div>
 
         <div className="mt-14 grid lg:grid-cols-2 gap-8">
           <div className="reveal space-y-5">
-            <InfoCard icon={<MapPin />} title="Dirección" lines={[ADDRESS]} />
+            <InfoCard icon={<MapPin />} title="Dirección" lines={[siteConfig.contact.address]} />
             <InfoCard
               icon={<Phone />}
               title="Teléfono / WhatsApp"
-              lines={[PHONE_DISPLAY]}
-              href={`tel:${PHONE_TEL}`}
+              lines={[siteConfig.contact.phoneDisplay]}
+              href={`tel:${siteConfig.contact.phoneUrl}`}
             />
             <InfoCard
               icon={<Clock />}
-              title="Horario de atención"
-              lines={["Lunes a Sábado", "8:00 a.m. – 7:00 p.m."]}
+              title={siteConfig.contact.hoursTitle}
+              lines={siteConfig.contact.hoursLines}
             />
             <a
-              href={WHATSAPP_URL}
+              href={siteConfig.contact.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full rounded-2xl bg-gradient-primary text-primary-foreground px-6 py-5 font-bold text-lg shadow-soft hover:scale-[1.01] transition"
             >
-              <MessageCircle /> Escríbenos por WhatsApp
+              <MessageCircle /> {siteConfig.contact.ctaPrimary}
             </a>
           </div>
 
           <div className="reveal rounded-3xl overflow-hidden shadow-card border border-border bg-card min-h-[400px]">
             <iframe
-              title="Ubicación Denti Smile"
+              title={`Ubicación ${siteConfig.name}`}
               src={mapSrc}
               className="w-full h-full min-h-[400px] border-0"
               loading="lazy"

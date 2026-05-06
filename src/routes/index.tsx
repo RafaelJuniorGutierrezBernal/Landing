@@ -1,29 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/site/Navbar";
-import { Hero } from "@/components/site/Hero";
-import { Services } from "@/components/site/Services";
-import { WhyUs } from "@/components/site/WhyUs";
-import { Testimonial } from "@/components/site/Testimonial";
-import { Contact } from "@/components/site/Contact";
-import { Footer } from "@/components/site/Footer";
-import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { Navbar } from "@/components/layout/Navbar";
+import { Hero } from "@/components/sections/Hero";
+import { Services } from "@/components/sections/Services";
+import { WhyUs } from "@/components/sections/WhyUs";
+import { Testimonial } from "@/components/sections/Testimonial";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloat } from "@/components/shared/WhatsAppFloat";
 import { useReveal } from "@/hooks/use-reveal";
+
+import { siteConfig } from "@/config/site";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Denti Smile · Odontología en Barranquilla" },
+      { title: siteConfig.titleSEO },
       {
         name: "description",
-        content:
-          "Consultorio odontológico en Barranquilla. Atención profesional, cálida y amigable para toda la familia. Agenda tu cita por WhatsApp.",
+        content: siteConfig.descriptionSEO,
       },
-      { property: "og:title", content: "Denti Smile · Odontología en Barranquilla" },
+      { property: "og:title", content: siteConfig.titleSEO },
       {
         property: "og:description",
-        content:
-          "Tu sonrisa, nuestra pasión. Clínica dental 5 estrellas, ambiente inclusivo en el barrio Metropolitana.",
+        content: siteConfig.descriptionSEO,
       },
     ],
   }),

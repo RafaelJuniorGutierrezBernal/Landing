@@ -1,9 +1,9 @@
-import { WHATSAPP_URL } from "@/lib/contact";
+import { siteConfig } from "@/config/site";
 
 export function WhatsAppFloat() {
   return (
     <a
-      href={WHATSAPP_URL}
+      href={siteConfig.contact.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"

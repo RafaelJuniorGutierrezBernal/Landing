@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import { Star, Quote } from "lucide-react";
 
 export function Testimonial() {
@@ -12,17 +13,15 @@ export function Testimonial() {
             ))}
           </div>
           <p className="text-xl md:text-2xl font-medium text-navy leading-relaxed">
-            “Llegué con miedo al odontólogo y me fui sonriendo de oreja a oreja. El equipo
-            de Denti Smile me hizo sentir en casa desde el primer momento. Profesionales,
-            amables y con un trato humano increíble. ¡Totalmente recomendados!”
+            {siteConfig.testimonial.quote}
           </p>
           <div className="mt-8 flex items-center gap-4">
             <div className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center text-white font-extrabold text-lg">
-              VM
+              {siteConfig.testimonial.authorInitials}
             </div>
             <div>
-              <div className="font-bold text-navy">Valentina Martínez</div>
-              <div className="text-sm text-muted-foreground">Paciente · Barranquilla</div>
+              <div className="font-bold text-navy">{siteConfig.testimonial.authorName}</div>
+              <div className="text-sm text-muted-foreground">{siteConfig.testimonial.authorRole}</div>
             </div>
           </div>
         </div>
