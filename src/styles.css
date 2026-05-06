@@ -1,8 +1,6 @@
-@import "tailwindcss" source(none);
-@import "tw-animate-css";
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
-
-@source "../src";
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
